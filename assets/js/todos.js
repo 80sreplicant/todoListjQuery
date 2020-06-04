@@ -21,19 +21,28 @@ $('ul').on('click', 'li', function () {
 
 // click on x to delete todo
 $('ul').on('click', 'span', function (event) {
-  $(this).parent().fadeOut(500, function() {
-    $(this).remove();
-  })
+  $(this)
+    .parent()
+    .fadeOut(500, function () {
+      $(this).remove();
+    });
   // this methods stops the bubbling of the click
   event.stopPropagation();
 });
 
-$('input[type="text"]').keypress(function(event) {
-    if(event.which === 13) {
-        // grabbing new todo text from input
-        let todoText = $(this).val()
-        $(this).val('');
-        // create a new li and add to ul
-        $('ul').append(`<li><span><i class="fa fa-trash-alt"></i></span> ${todoText}</li>`)
-    }
-})
+$('input[type="text"]').keypress(function (event) {
+  if (event.which === 13) {
+    // grabbing new todo text from input
+    let todoText = $(this).val();
+    $(this).val('');
+    // create a new li and add to ul
+    $('ul').append(
+      `<li><span><i class="fa fa-trash-alt"></i></span> ${todoText}</li>`
+    );
+  }
+});
+
+// select the + icon and toggle the input field
+$('.fa-plus').click(function () {
+  $('input[type="text"]').fadeToggle();
+});

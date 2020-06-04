@@ -6,16 +6,19 @@
   box-sizing: border-box;
 }
 
-#container {
-  width: 360px;
-  margin: 100px auto;
-  background: #f7f7f7;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-}
-
-.completed {
-  color: gray;
-  text-decoration: line-through;
+body {
+  font-family: Roboto;
+  background: #8e2de2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #4a00e0,
+    #8e2de2
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 h1 {
@@ -46,23 +49,20 @@ li:nth-child(2n) {
 }
 
 li:hover span {
-    width: 40px;
-    opacity: 1.0;
+  width: 40px;
+  opacity: 1;
 }
 
-body {
-  font-family: Roboto;
-  background: #8e2de2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #4a00e0,
-    #8e2de2
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+li span {
+  background: #8e2de2;
+  height: 40px;
+  margin-right: 20px;
+  text-align: center;
+  color: #fff;
+  width: 0;
+  display: inline-block;
+  transition: 0.4s linear;
+  opacity: 0;
 }
 
 input {
@@ -82,18 +82,18 @@ input:focus {
   transition: border 0.1s;
 }
 
-.fa-plus {
-    float: right;
+#container {
+  width: 360px;
+  margin: 100px auto;
+  background: #f7f7f7;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
-span {
-    background: #8e2de2;
-    height: 40px;
-    margin-right: 20px;
-    text-align: center;
-    color: #fff;
-    width: 0;
-    display: inline-block;
-    transition: 0.4s linear;
-    opacity: 0;
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.fa-plus {
+  float: right;
 }
